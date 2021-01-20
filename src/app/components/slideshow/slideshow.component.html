@@ -1,0 +1,25 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div
+      *ngFor="let movie of this.movies"
+      class="swiper-slide"
+      [ngStyle]="{
+        'background-size': 'cover',
+        'background-image':
+          'url(http://image.tmdb.org/t/p/original' + movie.backdrop_path + ')'
+      }"
+    >
+      <div class="movie-description">
+        <h3>{{ movie.title }}</h3>
+        <p>
+          {{ movie.overview }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper-pagination"></div>
+
+  <div class="swiper-button-prev" (click)="onSlidePrev()"></div>
+  <div class="swiper-button-next" (click)="onSlideNext()"></div>
+</div>
